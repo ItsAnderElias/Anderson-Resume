@@ -1,0 +1,51 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Faz com que o padding e a border sejam incluídos na largura e altura do elemento */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimento padrão */
+  border: 0; /* Remove bordas padrão */
+}
+
+html, body {
+  height: 100%; /* Garante que a altura do body seja de 100% */
+}
+
+body {
+  font-size: 62.5%;
+  line-height: 1; /* Define uma altura de linha padrão */
+  font-family: sans-serif; /* Aplica uma fonte genérica como padrão */
+  -webkit-font-smoothing: antialiased; /* Suaviza as fontes no Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Suaviza as fontes no Firefox */
+}
+
+img, picture, video, canvas {
+  display: block; /* Garante que as mídias sejam exibidas como blocos */
+  max-width: 100%; /* Assegura que mídias não excedam a largura de seus containers */
+}
+
+input, button, textarea, select {
+  font: inherit; /* Garante que os controles de formulário usem a mesma tipografia */
+}
+
+a {
+  text-decoration: none; /* Remove a sublinha padrão em links */
+  color: inherit; /* Faz os links herdarem a cor do elemento pai */
+}
+
+ul, ol {
+  list-style: none; /* Remove o estilo de lista padrão */
+}
+
+table {
+  border-collapse: collapse; /* Garante que tabelas não tenham espaçamento de borda duplicado */
+  border-spacing: 0;
+}
+
+button {
+  background: none; /* Remove o fundo padrão dos botões */
+  border: none; /* Remove a borda padrão dos botões */
+  cursor: pointer; /* Adiciona um cursor de ponteiro */
+}
+
