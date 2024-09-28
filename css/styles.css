@@ -1,14 +1,7 @@
 /* Importa o resetador de estilos do css */
 @import url(reset.css);
-
-@font-face {
-    font-family:'title';
-    src: url(/assets/fonts/Heavitas.ttf);
-}
-@font-face {
-    font-family:'roman';
-    src: url(/assets/fonts/Roman-SD.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Estilo da barra de navegação */
 .navbar{
@@ -62,7 +55,7 @@
 
 .navbar ul .icon-container h3 {
     text-align: left;
-    font-family: 'title', serif;
+    font-family: "Montserrat", sans-serif;
     transition: opacity 0.4s ease;
     font-size: 1.5rem;
     position: absolute;
@@ -102,10 +95,10 @@
     padding: 2%;
 }
 .home-page .logo h1 {
-    font-family: 'roman', serif;
+    font-family: "Bebas Neue", sans-serif;
     color: #F46246;
     text-shadow: 2px 2px 6px #243B3B;
-    font-size: 4rem;
+    font-size: 6.5rem;
     overflow: hidden;
     text-align: center;
 }
@@ -140,7 +133,7 @@
     padding: 1%;
 }
 .home-page .txt h1 {
-    font-family: 'title', serif;
+    font-family: "Montserrat", sans-serif;
     color: #F46246;
     
     font-size: 3rem;
