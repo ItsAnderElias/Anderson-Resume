@@ -2,6 +2,7 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
 
 /* Estilo da barra de navegação */
 .navbar{
@@ -168,9 +169,10 @@
 .carrosel .images-container img {
     width: 40rem;
     height: auto;
+    padding-left: 10px;
     animation-name: carrosel-move;
     animation-delay: 1s;
-    animation-duration: 50s;
+    animation-duration: 38s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -180,8 +182,181 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-8000px);
+        transform: translateX(-6000px);
     }
+}
+@keyframes left-in {
+    0% {
+        transform: translateX(-600px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Página Sobre */
+.about-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-page .myprofile {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 30%;
+    height: 100dvh;
+}
+
+.about-page .myprofile .name-photo h2 {
+    color: #fdfdfd;
+    text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 17%;
+    font-family: "Gowun Batang", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.about-page .myprofile .name-photo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-page .myprofile .name-photo .image-container {
+    width: 20rem; 
+    height: auto; 
+    overflow: hidden; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdfdfd;
+    margin-top: 5%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.about-page .myprofile .infos {
+    display: flex;
+    flex-direction: column;
+    color: #fdfdfd;
+    text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    overflow: hidden;
+    padding-top: 17%;
+    font-family: "Gowun Batang", serif;
+    font-weight: 400;
+    font-style: normal;
+    align-items: left;
+}
+.about-page .myprofile .infos ol {
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    text-align: left;
+    list-style: lower-alpha;
+}
+
+.about-page .myprofile .infos li .soft-skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page b {
+    color: #F46246;
+}
+
+.about-page .myprofile .infos ol li {
+    padding-bottom: 0.6rem;
+    padding-left: 15%;
+}
+
+.about-page .myprofile .infos li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+.about-page .myprofile .infos img {
+    width: 3rem;
+    padding-right: 0.5rem;
+}
+
+.myprofile {
+    transform: translateX(-500px);
+    transition: all 2s ease-in-out;
+}
+
+.myprofile.visible {
+    transform: translateX(0)
+}
+
+.mvv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 60%;
+    height: 100%;
+    text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+    overflow: hidden;
+    text-align: left;
+    font-family: "Gowun Batang", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 10% 0 5%;
+}
+
+.mvv h1 {
+    font-size: 3rem;
+    color: #F46246;
+}
+
+.mvv ol {
+    padding: 2% 0 0 5%;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.mvv ol li {
+    padding: 2% 0 0 0;
+}
+
+.mvv p {
+    padding: 1% 0 0 5%;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.mvv .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.mvv b {
+    font-size: 1.2rem;
+}
+
+.mvv img {
+    width: 3rem;
+}
+
+.mvv .title {
+    padding-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.mvv {
+    transform: translateX(1500px);
+    transition: all 2s ease-in-out;
+}
+
+.mvv.visible {
+    transform: translateX(0)
 }
 
 /* Celulares grandes/médios e tablets */
@@ -229,7 +404,7 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-3000px);
+            transform: translateX(-3800px);
         }
     }
     .carrosel .images-container {
@@ -239,7 +414,7 @@
     .carrosel .images-container img {
         width: 25rem;
         height: auto;
-        padding-left: 5px;
+        padding-left: 10px;
     }
 
 }
