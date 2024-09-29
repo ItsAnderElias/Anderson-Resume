@@ -427,7 +427,7 @@ body.no-scroll {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-3800px);
+            transform: translateX(-3700px);
         }
     }
     .carrosel .images-container {
@@ -446,7 +446,7 @@ body.no-scroll {
         overflow: scroll;
         height: 100%;
         width: 200%;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: mandatory;
     }
     .story-section {
         min-width: 100vw; /* Cada seção ocupa 100% da largura da viewport */
