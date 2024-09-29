@@ -11,6 +11,11 @@
     --title-font: "Montserrat", sans-serif;
 }
 
+/* desabilita scroll do mouse */
+body.no-scroll {
+    overflow: hidden; /* Desativa a rolagem */
+}
+
 /* Estilo da barra de navegação */
 .navbar{
     background-image: url(https://i.ibb.co/Ph7vJcj/white-marble.png);
@@ -78,6 +83,8 @@
 }
 /* Estilos das páginas */
 .page {
+    overflow-x: scroll;
+    overflow-y: hidden;
     padding-top: 4rem;
     width: 100dvw;
     height: 100dvh;
@@ -203,7 +210,10 @@
 /* Página Sobre */
 .about-page {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100dvw;
+    height: 100dvh;
+    overflow-x: scroll;
 }
 
 /* Foto e nome */
@@ -211,8 +221,8 @@
     display: flex;
     justify-content: left;
     flex-direction: column;
-    width: 50%;
-    height: 100dvh;
+    width: 50dvw;
+    height: 90dvh;
 }
 
 .about-page .myprofile .name-photo h2 {
@@ -306,7 +316,7 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
-    width: 60%;
+    width: 50dvw;
     height: 100dvh;
     text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
     font-size: 1rem;
@@ -369,6 +379,9 @@
     transform: translateX(0)
 }
 
+/* Pagina educação */
+
+
 /* Celulares grandes/médios e tablets */
 @media (max-width: 768px){
     /* home */
@@ -425,6 +438,186 @@
         width: 25rem;
         height: auto;
         padding-left: 10px;
+    }
+    /* Página Sobre */
+    .about-page {
+        flex-direction: row;
+        flex: 1 1 1;
+        overflow: scroll;
+        height: 100%;
+        width: 200%;
+        scroll-snap-type: x mandatory;
+    }
+    .story-section {
+        min-width: 100vw; /* Cada seção ocupa 100% da largura da viewport */
+        height: 100vh; /* Cada seção ocupa 100% da altura da viewport */
+        scroll-snap-align: start; /* Alinha ao início da seção */
+        display: flex;
+        overflow-y: scroll;
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+
+    /* Foto e nome */
+    .about-page .myprofile {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .about-page .myprofile .name-photo h2 {
+        color: var(--cor-destaque);
+        text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+        font-size: 2rem;
+        overflow: hidden;
+        text-align: center;
+        padding: 2% 0 0 2%;
+        font-family: var(--title-font);
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .about-page .myprofile .name-photo {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .about-page .myprofile .name-photo .image-container {
+        width: 5.5rem; 
+        height: 4rem; 
+        overflow: hidden; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--cor-base);
+        margin: 2% 0 0 5%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Infos abaixo da foto */
+    .about-page .myprofile .infos {
+        display: flex;
+        flex-direction: column;
+        color: var(--cor-base);
+        text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+        font-size: 1.2rem;
+        overflow: hidden;
+        padding: 0 0 0 2%;
+        font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        font-style: normal;
+        align-items: left;
+    }
+    .about-page .myprofile .infos ol {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .about-page .myprofile .infos li .soft-skills {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-page b {
+        color: var(--cor-destaque);
+    }
+
+    .about-page .myprofile .infos ol li {
+        padding-bottom: 0.5rem;
+        padding-left: 15%;
+    }
+
+    .about-page .myprofile .infos li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0.5rem;
+    }
+
+    .about-page .myprofile .infos img {
+        width: 2rem;
+        padding-right: 0.5rem;
+    }
+
+    .myprofile {
+        transform: translateX(-500px);
+        transition: all 2s ease-in-out;
+    }
+
+    .myprofile.visible {
+        transform: translateX(0)
+    }
+
+    /* Missão, visão e valores */
+    .mvv {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 100vw;
+        height: 100vh;
+        text-shadow: 6px 3px 8px rgba(0, 0, 0, 0.8);
+        font-size: 1rem;
+        overflow: hidden;
+        text-align: left;
+        font-family: var(--base-font);
+        font-weight: 400;
+        font-style: normal;
+        padding: 0 2% 0 2%;
+    }
+
+    .mvv h1 {
+        font-size: 1rem;
+        color: var(--cor-destaque);
+    }
+
+    .mvv ol {
+        padding: 1% 0 0 2%;
+        font-size: 1rem;
+        color: var(--cor-base);
+    }
+
+    .mvv ol li {
+        padding: 1% 0 0 0;
+    }
+
+    .mvv p {
+        padding: 1% 0 0 2%;
+        font-size: 1rem;
+        color: var(--cor-base);
+    }
+
+    .mvv .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .mvv b {
+        font-size: 1rem;
+    }
+
+    .mvv img {
+        width: 2rem;
+    }
+
+    .mvv .title {
+        padding-top: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .mvv {
+        transform: translateX(1500px);
+        transition: all 2s ease-in-out;
+    }
+
+    .mvv.visible {
+        transform: translateX(0)
     }
 
 }

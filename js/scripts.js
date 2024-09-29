@@ -26,3 +26,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         section.classList.add('visible');
     }
 });
+
+let container = document.querySelector('.about-page');
+let startX;
+
+container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+container.addEventListener('touchmove', (e) => {
+    let touch = e.touches[0];
+    let moveX = touch.clientX - startX;
+
+    // Rola a tela para a próxima seção se o swipe for maior que 50px
+    if (moveX < -50) {
+        container.scrollBy({
+            left: window.innerWidth, // Rola para a próxima seção
+            behavior: 'smooth'
+        });
+    } else if (moveX > 50) {
+        container.scrollBy({
+            left: -window.innerWidth, // Rola para a seção anterior
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Desabilitar o scroll
+document.body.style.overflow = 'hidden';
