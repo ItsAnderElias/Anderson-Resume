@@ -5,7 +5,7 @@
 
 /* Estilo da barra de navegação */
 .navbar{
-    background-image: url('/assets/images/white-marble.png');
+    background-image: url(https://i.ibb.co/Ph7vJcj/white-marble.png);
     width: 100dvw;
     height: 4rem;
     display: block;
@@ -73,7 +73,7 @@
     padding-top: 4rem;
     width: 100dvw;
     height: 100dvh;
-    background-image: url(/assets/images/Dark-Blue.png);
+    background-image: url(https://i.ibb.co/dP91J5j/Dark-Blue.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
