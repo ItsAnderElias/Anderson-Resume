@@ -54,3 +54,39 @@ container.addEventListener('touchmove', (e) => {
 
 // Desabilitar o scroll
 document.body.style.overflow = 'hidden';
+
+// Seleciona o modal e o conteúdo da imagem
+let modal = document.getElementById("myModal");
+let modalImg = document.getElementById("modalImage");
+let closeModal = document.getElementsByClassName("close")[0];
+
+// Seleciona todos os links que abrem o modal
+let openModalLinks = document.querySelectorAll(".openModal");
+
+// Itera sobre todos os links
+openModalLinks.forEach(function(link) {
+    link.onclick = function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do link
+
+        // Pega o valor do atributo data-img do link clicado
+        let imgSrc = link.getAttribute("data-img");
+
+        // Define o src da imagem do modal com a URL da imagem clicada
+        modalImg.src = imgSrc;
+
+        // Exibe o modal
+        modal.style.display = "block";
+    };
+});
+
+// Quando o usuário clica no botão "fechar" (x), fecha o modal
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Fecha o modal quando o usuário clica fora da imagem
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}

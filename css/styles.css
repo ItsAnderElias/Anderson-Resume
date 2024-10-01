@@ -150,7 +150,6 @@ body.no-scroll {
 .home-page .txt h1 {
     font-family: var(--title-font);
     color: var(--cor-destaque);
-    
     font-size: 3rem;
     overflow: hidden;
     text-align: center;
@@ -185,10 +184,11 @@ body.no-scroll {
     height: auto;
     padding-left: 15px;
     animation-name: carrosel-move;
-    animation-delay: 1s;
+    animation-delay: 0.3s;
     animation-duration: 38s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    transition: all ease-in-out 1s;
 }
 
 @keyframes carrosel-move {
@@ -207,6 +207,66 @@ body.no-scroll {
         transform: translateX(0);
     }
 }
+/* mobile home page */
+@media (max-width: 768px) {
+    /* home */
+    .home-page {
+        flex-direction: column;
+    }
+    /* home logo e nome */
+    .home-page .logo h1 {
+        font-size: 2rem;
+    }
+    .home-page .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 2%;
+        width: 100%;
+        height: 15%;
+    }
+    .home-page .logo .image-container {
+        width: 10rem;
+        display: flex;
+        position: relative;
+    }
+    .home-page .logo .image-container img {
+        padding-top: 0;
+        align-self: center;
+    }
+    /* home texto */
+    .home-page .txt {
+        padding: 0% 2% 0% 2%;
+    }
+    .home-page .txt h1 {
+        font-size: 2rem;
+    }
+    .home-page .txt p {
+        padding-top: 1%;
+        font-size: 1rem;
+    }
+    /* Carrosel */
+    @keyframes carrosel-move {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-3700px);
+        }
+    }
+}
+@media (max-height: 680px) {
+    .carrosel .images-container img {
+        width: 30rem;
+        padding-left: 5px;
+    }
+    .carrosel .images-container {
+        width: 100%;
+        height: 25%;
+    }
+}
+
 /* Página Sobre */
 .about-page {
     display: flex;
@@ -303,8 +363,8 @@ body.no-scroll {
 }
 
 .myprofile {
-    transform: translateX(-500px);
-    transition: all 2s ease-in-out;
+    transform: translateX(-1000px);
+    transition: all 1s ease-in-out;
 }
 
 .myprofile.visible {
@@ -379,57 +439,8 @@ body.no-scroll {
     transform: translateX(0)
 }
 
-/* Pagina educação */
-
-
-/* Celulares grandes/médios e tablets */
-@media (max-width: 768px){
-    /* home */
-    .home-page {
-        flex-direction: column;
-    }
-    /* home logo e nome */
-    .home-page .logo h1 {
-        font-size: 2rem;
-    }
-    .home-page .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        padding: 2%;
-        width: 100%;
-        height: 15%;
-    }
-    .home-page .logo .image-container {
-        width: 10rem;
-        display: flex;
-        position: relative;
-    }
-    .home-page .logo .image-container img {
-        padding-top: 0;
-        align-self: center;
-    }
-    /* home texto */
-    .home-page .txt {
-        padding: 0% 2% 0% 2%;
-    }
-    .home-page .txt h1 {
-        font-size: 2rem;
-    }
-    .home-page .txt p {
-        padding-top: 1%;
-        font-size: 1rem;
-    }
-    /* Carrosel */
-    @keyframes carrosel-move {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-3700px);
-        }
-    }
+/* mobile about page */
+@media (max-width: 768px) {
     .carrosel .images-container {
         width: 100%;
         height: 30%;
@@ -621,13 +632,192 @@ body.no-scroll {
     }
 
 }
-@media (max-height: 680px) {
-    .carrosel .images-container img {
-        width: 30rem;
-        padding-left: 5px;
+
+/* Pagina educação */
+.education-page {
+    display: flex;
+}
+.education-page .container {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0 0 0;
+    font-family: var(--base-font);
+    color: var(--cor-base);
+    font-size: 1rem;
+}
+
+.education-page h1 {
+    font-family: var(--title-font);
+    color: var(--cor-destaque);
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.education-page ol {
+    width: 80%;
+    height: 80%;
+    border: 2px solid var(--cor-base);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.education-page ul li {
+    margin: 0rem 0 0.5rem 3.5rem;
+    display: flex;
+}
+.education-page ul li img {
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+    margin: 0 0.5rem 0 0;
+}
+
+.education-page h2 {
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+}
+
+.education-page h2 img {
+    width: 2rem;
+    height: 2rem;
+    align-self: center;
+    margin: 0 0.5rem 0 0;
+}
+
+ /* O modal (oculto por padrão) */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* O conteúdo da imagem no modal */
+.modal-content {
+    display: block;
+    margin: 15% auto;
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 10px;
+}
+
+/* Botão fechar (X) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .education-page {
+        flex-direction: row;
+        flex: 1 1 1;
+        overflow: scroll;
+        height: 100%;
+        width: 200%;
+        scroll-snap-type: mandatory;
     }
-    .carrosel .images-container {
-        width: 100%;
-        height: 25%;
+
+    .education-page .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2% 0 0 0;
+        font-family: var(--base-font);
+        color: var(--cor-base);
+        font-size: 1rem;
     }
+
+    .modal-content {
+        display: block;
+        margin: 40vh auto;
+        max-width: 70%;
+        max-height: auto;
+        border-radius: 10px;
+    }
+}
+
+/* Página Jobs */
+.jobs-page {
+    display: flex;
+}
+.jobs-page .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--base-font);
+    color: var(--cor-base);
+    font-size: 1rem;
+}
+
+.jobs-page h1 {
+    font-family: var(--title-font);
+    color: var(--cor-destaque);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.jobs-page ol {
+    width: 80%;
+    height: 80%;
+    border: 2px solid var(--cor-base);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.jobs-page ul li {
+    margin: 0rem 0 0.5rem 3.5rem;
+    display: flex;
+}
+.jobs-page ul li img {
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+    margin: 0 0.5rem 0 0;
+}
+
+.jobs-page h2 {
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+}
+
+.jobs-page h2 img {
+    width: 2rem;
+    height: 2rem;
+    align-self: center;
+    margin: 0 0.5rem 0 0;
 }
